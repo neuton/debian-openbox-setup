@@ -1,0 +1,94 @@
+#============================================================
+# Based on "Nightmare" for openbox by Maxim.
+#============================================================
+
+#======================================
+#     Menu Settings
+#======================================
+
+menu.title.bg: flat solid
+menu.title.bg.color: #101010
+menu.title.text.color: #dddddd
+
+menu.separator.color: #404040
+
+menu.items.bg: flat solid
+menu.items.bg.color: #101010
+menu.items.text.color: #dddddd
+menu.items.disabled.text.color: #707070
+
+menu.items.active.bg: flat horizontal solid
+menu.items.active.bg.color: #3465A4
+#menu.items.active.bg.border.color: #3465A4
+menu.items.active.text.color: #dddddd
+
+menu.border.color: #3465A4
+
+#======================================
+#     Focused Window Settings
+#======================================
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: #101010
+
+window.active.border.color: #3465A4
+
+window.active.handle.bg: flat solid
+window.active.handle.bg.color: #101010
+
+window.active.grip.bg: parentrelative
+
+window.active.label.bg: parentrelative
+window.active.label.text.color: #dddddd
+
+window.*.button.*.bg: parentrelative
+window.active.button.*.image.color: #ffffff
+window.active.button.*.pressed.image.color: #000000
+window.active.button.disabled.image.color: #ffffff
+
+#======================================
+#     Unfocused Window Settings
+#======================================
+
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #101010
+
+window.inactive.border.color: #101010
+
+window.inactive.handle.bg: flat solid
+window.inactive.handle.bg.color: #101010
+
+window.inactive.grip.bg: parentrelative
+
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #404040
+
+window.inactive.button.*.image.color: #ffffff
+
+#======================================
+#     Global Width Settings
+#======================================
+
+padding.width: 4
+padding.height: 4
+border.width: 2
+window.handle.width: 0
+window.client.padding.width: 0
+menu.overlap.x: -4
+
+#======================================
+#     Osd		
+#======================================
+
+osd.hilight.bg: flat border horizontal solid
+#osd.hilight.bg.color: #729FCF
+osd.hilight.bg.color: #404040
+osd.hilight.bg.border.color: #3465A4
+
+#======================================
+#     Title Justification
+#======================================
+
+menu.title.text.justify: left
+window.label.text.justify: left
+

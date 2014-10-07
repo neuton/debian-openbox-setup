@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Menu
+GenericName=Menu
+Comment=Access OpenBox Menu
+Exec=xdotool key super+space
+Terminal=false
+X-MultipleArgs=false
+Icon=/usr/share/icons/debian-logo-128.png
+

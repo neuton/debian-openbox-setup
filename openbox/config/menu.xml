@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Run...">
+			<action name="Execute">
+				<execute>gmrun</execute>
+			</action>
+		</item>
+		<item label="Terminal emulator">
+			<action name="Execute">
+				<!--<execute>x-terminal-emulator</execute>-->
+				<execute>terminator --geometry=920x520</execute>
+			</action>
+		</item>
+		<item label="File manager">
+			<action name="Execute">
+				<execute>thunar</execute>
+			</action>
+		</item>
+		<item label="Web browser">
+			<action name="Execute">
+				<!--<execute>x-www-browser</execute>-->
+				<execute>chromium</execute>
+			</action>
+		</item>
+		<!-- This requires the presence of the 'menu' package to work -->
+		<menu id="/Debian"/>
+		<separator/>
+		<menu id="client-list-menu"/>
+		<separator/>
+		<menu id="config-menu" label="System">
+			<menu id="lxde-config-menu" label="LXDE tools">
+				<item label="Mouse">
+					<action name="Execute">
+						<execute>lxinput</execute>
+					</action>
+				</item>
+				<item label="GTK themes">
+					<action name="Execute">
+						<execute>lxappearance</execute>
+					</action>
+				</item>
+			</menu>
+			<menu id="openbox-config-menu" label="Openbox">
+				<item label="ObConf">
+					<action name="Execute">
+						<execute>obconf</execute>
+					</action>
+				</item>
+				<item label="Reconfigure">
+					<action name="Reconfigure"/>
+				</item>
+				<item label="Restart">
+					<action name="Restart"/>
+				</item>
+			</menu>
+		</menu>
+		<separator/>
+		<menu id="exit-menu" label="Exit">
+			<item label="Exit">
+				<action name="Exit"/>
+			</item>
+			<item label="Suspend">
+			    <action name="Execute">
+				<execute>
+				    sudo pm-suspend
+				</execute>
+			    </action>
+			</item>
+			<item label="Hybrid-Suspend">
+			    <action name="Execute">
+				<execute>
+				    sudo pm-suspend-hybrid
+				</execute>
+			    </action>
+			</item>
+			<item label="Hibernate">
+			    <action name="Execute">
+				<execute>
+				    sudo pm-hibernate
+				</execute>
+			    </action>
+			</item>
+			<item label="Reboot">
+			    <action name="Execute">
+				<prompt>
+				    Are you sure you want to reboot?
+				</prompt>
+				<execute>
+				    sudo shutdown -r now
+				</execute>
+			    </action>
+			</item>
+			<item label="Shutdown">
+			    <action name="Execute">
+				<prompt>
+				    Are you sure you want to shutdown?
+				</prompt>
+				<execute>
+				    sudo shutdown -h now
+				</execute>
+			    </action>
+			</item>
+		</menu>
+	</menu>
+</openbox_menu>

@@ -1,0 +1,23 @@
+# based on "minimal" theme for SLiM (njonaitis@gmail.com)
+
+background_style        center
+background_color        #202020
+
+input_panel_x           50%
+input_panel_y           82%
+input_name_x            200
+input_name_y            10
+input_font              fixed:size=13:dpi=75
+input_fgcolor           #dddddd
+input_color             #dddddd
+
+username_font           fixed:size=13:dpi=75
+username_color          #dddddd
+username_x              118
+username_y              10
+password_x              120
+password_y              10
+
+username_msg            username :
+password_msg            password :
+

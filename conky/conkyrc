@@ -1,0 +1,106 @@
+##############################################
+#  Settings
+##############################################
+
+own_window_argb_visual true
+
+background yes
+use_xft yes
+xftfont HandelGotD:size=8
+xftalpha 0.5
+update_interval 5.0
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 220 5
+maximum_width 220
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color 858882
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 26
+gap_y 32
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+
+TEXT
+#${font sans-serif:bold:size=8}DATE ${hr 2}
+${font sans-serif:bold:size=8}${hr 2}
+${alignc 62}${font Trebuchet MS:size=42}${time %H:%M}${font}
+
+${alignc}${time %a %d %b %Y}
+
+
+${font sans-serif:bold:size=8}SYSTEM ${hr 2}
+${font sans-serif:normal:size=8}$sysname $kernel $alignr $machine
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+#File System: $alignr${fs_type}
+
+
+${font sans-serif:bold:size=8}CPU ${hr 2}
+${font sans-serif:normal:size=8} ${exec sensors | grep power1 | grep -o '[0-9]*\.[0-9]*' | head -n1} W / ${exec sensors | grep power | grep -o '[0-9]*\.[0-9]*' | tail -n1} W $alignr ${exec sensors | grep temp3 | grep -o '[0-9]*\.[0-9]*' | head -n1} ${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+${cpugraph cpu0 24,24 0011ff 0011ff} ${cpugraph cpu1 24,24 0011ff 0011ff} ${cpugraph cpu2 24,24 0011ff 0011ff} ${cpugraph cpu3 24,24 0011ff 0011ff} ${cpugraph cpu4 24,24 0011ff 0011ff} ${cpugraph cpu5 24,24 0011ff 0011ff} ${cpugraph cpu6 24,24 0011ff 0011ff} ${cpugraph cpu7 24,24 0011ff 0011ff}
+${cpubar cpu0 6,124} ${cpu cpu0}% $alignr ${freq_g 0} GHz
+${cpubar cpu1 6,124} ${cpu cpu1}% $alignr ${freq_g 1} GHz
+${cpubar cpu2 6,124} ${cpu cpu2}% $alignr ${freq_g 2} GHz
+${cpubar cpu3 6,124} ${cpu cpu3}% $alignr ${freq_g 3} GHz
+${cpubar cpu4 6,124} ${cpu cpu4}% $alignr ${freq_g 4} GHz
+${cpubar cpu5 6,124} ${cpu cpu5}% $alignr ${freq_g 5} GHz
+${cpubar cpu6 6,124} ${cpu cpu6}% $alignr ${freq_g 6} GHz
+${cpubar cpu7 6,124} ${cpu cpu7}% $alignr ${freq_g 7} GHz
+
+
+${font sans-serif:bold:size=8}GPU ${hr 2}
+${font sans-serif:normal:size=8} ${exec aticonfig --odgc | grep Clocks | grep -o '[0-9]*' | head -n1} MHz  |  ${exec aticonfig --odgc | grep Clocks | grep -o '[0-9]*' | tail -n1} MHz $alignr ${exec aticonfig --odgt | grep -o '[0-9]*\.[0-9]*'} ${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+${execgraph aticonfig --odgc | grep load | grep -o '[0-9]*'}
+
+
+${font sans-serif:bold:size=8}RAM ${hr 2}
+${font sans-serif:normal:size=8} $alignc $mem / $memmax $alignr $memperc%
+$membar
+
+
+${font sans-serif:bold:size=8}SWAP ${hr 2}
+${font sans-serif:normal:size=8} $alignc ${swap} / ${swapmax} $alignr ${swapperc}%
+$swapbar
+
+
+${font sans-serif:bold:size=8}SSD ${hr 2}
+#${font sans-serif:normal:size=8}$diskiograph
+${font sans-serif:normal:size=8}$alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${fs_bar /}
+$alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
+${fs_bar /home}
+
+
+${font sans-serif:bold:size=8}NETWORK ${hr 2}
+${font sans-serif:normal:size=8}IP address: $alignr ${addr eth0}
+${downspeedgraph eth0 99cc33 006600}
+DownSpeed: $alignc ${downspeed eth0} $alignr total: ${totaldown eth0}
+${upspeedgraph eth0  ffcc00 ff0000}
+UpSpeed: $alignc ${upspeed eth0} $alignr total: ${totalup eth0}
+
+
+#${font sans-serif:bold:size=8}PROCESSES ${hr 2}
+#running / all: $alignr $running_processes / $processes
+#
+${font sans-serif:bold:size=8}TOP 8 ${hr 2}
+${font sans-serif:normal:size=8}${top_mem name 1}${alignr}${top mem 1} %
+${top_mem name 2}${alignr}${top mem 2} %
+$font${top_mem name 3}${alignr}${top mem 3} %
+$font${top_mem name 4}${alignr}${top mem 4} %
+$font${top_mem name 5}${alignr}${top mem 5} %
+$font${top_mem name 6}${alignr}${top mem 6} %
+$font${top_mem name 7}${alignr}${top mem 7} %
+$font${top_mem name 8}${alignr}${top mem 8} %
+
