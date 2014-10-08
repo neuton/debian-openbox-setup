@@ -2,7 +2,6 @@ nitrogen --restore
 xinput --set-prop '2.4G Receiver' 'Device Accel Constant Deceleration' 2
 xset m 1/2 1
 xset r rate 250 30
-setxkbmap -layout 'us,ru,ua' -option 'grp:alt_shift_toggle'
 xcompmgr -fD3 &
 conky &
 tint2 &
