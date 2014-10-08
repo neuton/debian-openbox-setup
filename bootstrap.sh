@@ -4,11 +4,13 @@ echo ============================== updating system ============================
 apt-get update && apt-get upgrade -y &&
 
 echo ========================== getting basic packages ============================== &&
-apt-get install -y xorg openbox xcompmgr slim tint2 volti conky nitrogen halevt unzip curl linux-headers-$(uname -r) build-essential xdotool lm-sensors  git &&
+apt-get install -y xorg openbox slim tint2 volti conky nitrogen halevt unzip curl xdotool lm-sensors &&
 
 echo ============================== setup lm-sensors ================================ &&
 sensors-detect &&
 service kmod start &&
+
+sh xcompmgr-install.sh &&
 
 echo ============================= basic desktop setup ============================== &&
 
@@ -39,6 +41,6 @@ cp slim/config/slim.conf /etc/slim.conf &&
 echo ========================= getting additional packages ========================== &&
 apt-get install -y lxpolkit lxappearance lxinput thunar terminator geany gmrun chromium libreoffice vlc vim &&
 
-sh blender-install.sh &&
-sh skype-install.sh &&
+#sh blender-install.sh &&
+#sh skype-install.sh &&
 sh fglrx-install.sh
