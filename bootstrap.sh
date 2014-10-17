@@ -1,46 +1,50 @@
 #!/bin/sh
 
+echo &&
 echo ============================== updating system ================================= &&
-apt-get update && apt-get upgrade -y &&
+sudo apt-get update &&
+sudo apt-get upgrade -y &&
 
+echo &&
 echo ========================== getting basic packages ============================== &&
-apt-get install -y xorg openbox slim tint2 volti conky nitrogen halevt unzip curl xdotool lm-sensors &&
+sudo apt-get install -y xorg openbox slim tint2 volti conky nitrogen xcompmgr unzip curl xdotool lm-sensors &&
 
+echo &&
 echo ============================== setup lm-sensors ================================ &&
-sensors-detect &&
-service kmod start &&
+sudo sensors-detect &&
+sudo service kmod start &&
 
-sh xcompmgr-install.sh &&
-
+echo &&
 echo ============================= basic desktop setup ============================== &&
+mkdir ~/.config &&
 
 # nitrogen setup
-mkdir ~/.config/nitrogen
+mkdir ~/.config/nitrogen &&
 cp -r nitrogen/config/* ~/.config/nitrogen &&
 
 # Openbox setup
-cp openbox/sudoers /etc/sudoers &&
-mkdir ~/.config/openbox
-mkdir ~/.themes
+sudo cp openbox/sudoers /etc/sudoers &&
+mkdir ~/.config/openbox &&
 cp -r openbox/config/* ~/.config/openbox/ &&
+mkdir ~/.themes &&
 cp -r openbox/themes/* ~/.themes/ &&
 
 # conky setup
 cp conky/conkyrc ~/.conkyrc &&
 
 # tint2 setup
-mkdir ~/.config/tint2
+mkdir ~/.config/tint2 &&
 cp tint2/config/tint2rc ~/.config/tint2/tint2rc &&
-cp tint2/debian-logo-128.png /usr/share/icons/debian-logo-128.png &&
-cp tint2/menu.desktop /usr/share/applications/menu.desktop &&
+sudo cp tint2/debian-logo-128.png /usr/share/icons/debian-logo-128.png &&
+sudo cp tint2/menu.desktop /usr/share/applications/menu.desktop &&
 
 # SLiM setup
-cp -r slim/themes/* /usr/share/slim/themes/ &&
-cp slim/config/slim.conf /etc/slim.conf &&
+sudo cp -r slim/themes/* /usr/share/slim/themes/ &&
+sudo cp slim/config/slim.conf /etc/slim.conf &&
 
+echo &&
 echo ========================= getting additional packages ========================== &&
-apt-get install -y lxpolkit lxappearance lxinput thunar terminator geany gmrun chromium libreoffice vlc vim &&
+sudo apt-get install -y lxpolkit lxappearance lxinput thunar terminator geany gmrun chromium libreoffice vlc &&
 
-#sh blender-install.sh &&
-#sh skype-install.sh &&
-sh fglrx-install.sh
+echo &&
+echo finished.
