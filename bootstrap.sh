@@ -7,15 +7,19 @@ sudo apt-get upgrade -y &&
 
 echo &&
 echo ========================== getting basic packages ============================== &&
-sudo apt-get install -y xorg openbox slim tint2 volti conky nitrogen xcompmgr unzip curl xdotool lm-sensors &&
+sudo apt-get install -y xorg openbox slim tint2 volti conky nitrogen xcompmgr unzip curl xdotool lm-sensors git &&
 
 echo &&
 echo ============================== setup lm-sensors ================================ &&
-sudo sensors-detect --auto &&
+sudo sensors-detect &&
 sudo service kmod start &&
 
 echo &&
 echo ============================= basic desktop setup ============================== &&
+cp gitconfig ~/.gitconfig &&
+cp vimrc ~/.vimrc &&
+cp xsession ~/.xsession &&
+cp bashrc ~/.bashrc &&
 mkdir ~/.config &&
 
 # nitrogen setup
@@ -44,7 +48,7 @@ sudo cp slim/config/slim.conf /etc/slim.conf &&
 
 echo &&
 echo ========================= getting additional packages ========================== &&
-sudo apt-get install -y lxpolkit lxappearance lxinput thunar terminator geany gmrun chromium libreoffice vlc &&
+sudo apt-get install -y lxpolkit lxappearance lxinput qt4-qtconfig gnome-icon-theme thunar terminator geany gmrun chromium libreoffice vlc gimp &&
 
 echo &&
 echo finished.

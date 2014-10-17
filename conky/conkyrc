@@ -35,7 +35,7 @@ override_utf8_locale no
 TEXT
 #${font sans-serif:bold:size=8}DATE ${hr 2}
 ${font sans-serif:bold:size=8}${hr 2}
-${alignc 62}${font Trebuchet MS:size=42}${time %H:%M}${font}
+${alignc 62}${font Trebuchet MS:size=42}${time %H:%M}${font sans-serif:size=8}
 
 ${alignc}${time %a %d %b %Y}
 
@@ -97,10 +97,10 @@ UpSpeed: $alignc ${upspeed eth0} $alignr total: ${totalup eth0}
 ${font sans-serif:bold:size=8}TOP 8 ${hr 2}
 ${font sans-serif:normal:size=8}${top_mem name 1}${alignr}${top mem 1} %
 ${top_mem name 2}${alignr}${top mem 2} %
-$font${top_mem name 3}${alignr}${top mem 3} %
-$font${top_mem name 4}${alignr}${top mem 4} %
-$font${top_mem name 5}${alignr}${top mem 5} %
-$font${top_mem name 6}${alignr}${top mem 6} %
-$font${top_mem name 7}${alignr}${top mem 7} %
-$font${top_mem name 8}${alignr}${top mem 8} %
+${top_mem name 3}${alignr}${top mem 3} %
+${top_mem name 4}${alignr}${top mem 4} %
+${top_mem name 5}${alignr}${top mem 5} %
+${top_mem name 6}${alignr}${top mem 6} %
+${top_mem name 7}${alignr}${top mem 7} %
+${top_mem name 8}${alignr}${top mem 8} %
 

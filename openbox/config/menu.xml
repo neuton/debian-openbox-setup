@@ -40,6 +40,11 @@
 						<execute>lxappearance</execute>
 					</action>
 				</item>
+				<item label="Qt themes">
+					<action name="Execute">
+						<execute>qtconfig</execute>
+					</action>
+				</item>
 			</menu>
 			<menu id="openbox-config-menu" label="Openbox">
 				<item label="ObConf">
