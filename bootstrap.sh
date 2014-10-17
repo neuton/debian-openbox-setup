@@ -11,7 +11,7 @@ sudo apt-get install -y xorg openbox slim tint2 volti conky nitrogen xcompmgr un
 
 echo &&
 echo ============================== setup lm-sensors ================================ &&
-sudo sensors-detect &&
+sudo sensors-detect --auto &&
 sudo service kmod start &&
 
 echo &&
